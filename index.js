@@ -1,0 +1,1 @@
+// Require npm package jest and inquirer as well as classes.js for any classes used
