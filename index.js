@@ -4,6 +4,6 @@ const Manager = require('./lib/Manager')
 const Engineer = require('./lib/Engineer')
 const Intern = require('./lib/Intern')
 
-const Manager1 = new Intern('Ben', 42, 'ben@ben', 'CU');
+const Manager1 = new Employee('Ben', 42, 'ben@ben');
 
-console.log(Manager1.getSchool());
+console.log(Manager1.id);
