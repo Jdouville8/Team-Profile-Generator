@@ -64,7 +64,7 @@ const teamBuilder = () => {
           <!-- Intern Card -->
           <div class="row bg-success m-4">
               <div class="card">
-                  <div class="card-header text-center fs-2">
+                  <div class="card-header text-center fs-2 bg-info">
                     Intern
                   </div>
                   <div class="card-body">
@@ -152,7 +152,7 @@ const teamBuilder = () => {
       <!-- Engineer Card -->
       <div class="row bg-success m-4">
           <div class="card">
-              <div class="card-header text-center fs-2">
+              <div class="card-header text-center fs-2 bg-danger">
                 Engineer
               </div>
               <div class="card-body">
@@ -252,7 +252,7 @@ const teamBuilder = () => {
       <!-- Manager Card -->
       <div class="row bg-success m-4">
           <div class="card">
-              <div class="card-header text-center fs-2">
+              <div class="card-header text-center fs-2 bg-warning">
                 Manager
               </div>
               <div class="card-body">

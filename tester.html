@@ -1,34 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+  <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
-      crossorigin="anonymous"
-    />
-    <title>TeamBuilder</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+      <title>TeamBuilder</title>
   </head>
   <body>
-    <div class="row bg-success">
-      <h1 class="fs-1 fw-bold text-center m-4">The Team Builder</h1>
-    </div>
-
-    <!-- Manager Card -->
-    <div class="row bg-success m-4">
-      <div class="card">
-        <div class="card-header text-center fs-2">Manager</div>
-        <div class="card-body">
-          <h5 class="card-title">Name: ${theManager.name}</h5>
-          <p class="card-text">Employee ID: ${theManager.id}</p>
-          <p class="card-text">Office number: ${theManager.officeNumber}</p>
-          <a href="#" class="btn btn-primary"
-            >Email Address: ${theManager.email}</a
-          >
-        </div>
+      <div class="row bg-success">
+          <h1 class="fs-1 fw-bold text-center m-4">The Team Builder</h1>
       </div>
-    </div>
-  </body>
-</html>
+  
+      <!-- Manager Card -->
+      <div class="row bg-success m-4">
+          <div class="card">
+              <div class="card-header text-center fs-2 bg-warning">
+                Manager
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Name: dave</h5>
+                <p class="card-text">Employee ID: 23</p>
+                <p class="card-text">Office number: 567</p>
+                <a href="#" class="btn btn-primary">Email Address: dave@gmail.com</a>
+              </div>
+            </div>
+      </div>
+
+      <!-- Engineer Card -->
+      <div class="row bg-success m-4">
+          <div class="card">
+              <div class="card-header text-center fs-2 bg-danger">
+                Engineer
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Name: Perry</h5>
+                <p class="card-text">Employee ID: 54</p>
+                <a href="#" class="btn btn-primary">Email Address: Perbear@gmail.com</a>
+                <a href="#" class="btn btn-success">Github: perry84</a>
+              </div>
+            </div>
+      </div>
+      
+          <!-- Intern Card -->
+          <div class="row bg-success m-4">
+              <div class="card">
+                  <div class="card-header text-center fs-2 bg-info">
+                    Intern
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Name: Lenny</h5>
+                    <p class="card-text">Employee ID: 99</p>
+                    <p class="card-text">Employee School: Lenny66</p>
+                    <a href="#" class="btn btn-primary">Email Address: Lenmonice@gmail.com</a>
+                  </div>
+                </div>
+          </div>
+            </body>
+          </html>
