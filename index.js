@@ -11,6 +11,7 @@ const fs = require("fs");
 // Ultimately pass prompt answers into a new Manager object
 // Pull values from manager object to populate html
 // make a new object for each employee and put it in a team members array to then be iterated through and populate html
+// Split up the last few ending tags of html to be inserted after all information has been appended, attach to the add members question
 
 var teamBuilder = () => {
   var managerCreate = () => {
@@ -35,7 +36,27 @@ var teamBuilder = () => {
         name: "OfficeNumber",
         message: "Please provide an Office Number",
       },
-    ]);
+      {
+        type: "list",
+        name: "AddMember",
+        choices: ['Engineer', 'Intern', 'No thanks!'],
+        message: "Would you like to add another team member?",
+      },
+    ])
+    .then((answers) => {
+  const {
+    ManagerName,
+    ManagerID,
+    ManagerEmail,
+    OfficeNumber,
+    AddMember
+  } = answers;
+  const theManager = new Manager(ManagerName, ManagerID, ManagerEmail, OfficeNumber)
+  if (AddMember == "Engineer" || "Intern") {
+      console.log("yoooooo")
+  }
+// if ()
+})
   };
   managerCreate();
 };
