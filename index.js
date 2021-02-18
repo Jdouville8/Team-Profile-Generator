@@ -28,7 +28,7 @@ var teamBuilder = () => {
       },
       {
         type: "input",
-        name: "Email",
+        name: "ManagerEmail",
         message: "What is a good Email to reach you at?",
       },
       {
@@ -53,6 +53,46 @@ var teamBuilder = () => {
   } = answers;
   const theManager = new Manager(ManagerName, ManagerID, ManagerEmail, OfficeNumber)
   
+  const HTML = `<!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+      <title>TeamBuilder</title>
+  </head>
+  <body>
+      <div class="row bg-success">
+          <h1 class="fs-1 fw-bold text-center m-4">The Team Builder</h1>
+      </div>
+  
+      <!-- Manager Card -->
+      <div class="row bg-success m-4">
+          <div class="card">
+              <div class="card-header text-center fs-2">
+                Manager
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Name: ${theManager.name}</h5>
+                <p class="card-text">Employee ID: ${theManager.id}</p>
+                <p class="card-text">Office number: ${theManager.officeNumber}</p>
+                <a href="#" class="btn btn-primary">Email Address: ${theManager.email}</a>
+              </div>
+            </div>
+      </div>
+      
+  </body>
+  </html>`
+  
+  fs.writeFile("index.html", HTML, (err) => {
+    if (err) {
+      throw err;
+    } else {
+      console.log("Your Team builder website has been built!");
+    }
+  });
+
+
   if (AddMember == "Engineer" || "Intern") {
       console.log("yoooooo")
   }

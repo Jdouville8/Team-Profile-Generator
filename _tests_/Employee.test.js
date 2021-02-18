@@ -26,7 +26,7 @@ describe("Employee class", () => {
   });
 
   describe("getRole method", () => {
-    it("displays the employee role", () => {
+    it("returns the employee role", () => {
       const Employee1 = new Employee("Dave", 5, 'dave@manager.com')
       Employee1.getRole();
       expect(Employee1.getRole()).toBe('Employee');
