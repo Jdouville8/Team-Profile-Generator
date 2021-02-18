@@ -13,47 +13,142 @@ const fs = require("fs");
 // make a new object for each employee and put it in a team members array to then be iterated through and populate html
 // Split up the last few ending tags of html to be inserted after all information has been appended, attach to the add members question
 
-var teamBuilder = () => {
-  var managerCreate = () => {
-    inquirer.prompt([
-      {
-        type: "input",
-        name: "ManagerName",
-        message: "What is the name of the Manager?",
-      },
-      {
-        type: "input",
-        name: "ManagerID",
-        message: "Please provide a manager ID",
-      },
-      {
-        type: "input",
-        name: "ManagerEmail",
-        message: "What is a good Email to reach you at?",
-      },
-      {
-        type: "input",
-        name: "OfficeNumber",
-        message: "Please provide an Office Number",
-      },
-      {
-        type: "list",
-        name: "AddMember",
-        choices: ['Engineer', 'Intern', 'No thanks!'],
-        message: "Would you like to add another team member?",
-      },
-    ])
-    .then((answers) => {
-  const {
-    ManagerName,
-    ManagerID,
-    ManagerEmail,
-    OfficeNumber,
-    AddMember
-  } = answers;
-  const theManager = new Manager(ManagerName, ManagerID, ManagerEmail, OfficeNumber)
-  
-  const HTML = `<!DOCTYPE html>
+//   Function that holds logic for html creation
+const teamBuilder = () => {
+  const engineerCreate = () => {
+    inquirer
+      .prompt([
+        {
+          type: "input",
+          name: "EngineerName",
+          message: "What is the name of the Engineer?",
+        },
+        {
+          type: "input",
+          name: "EngineerID",
+          message: "Please provide an ID for the Engineer",
+        },
+        {
+          type: "input",
+          name: "EngineerEmail",
+          message: "What is a good Email to reach them at?",
+        },
+        {
+          type: "input",
+          name: "Github",
+          message: "Please provide a Github username",
+        },
+        {
+          type: "list",
+          name: "AddMember",
+          choices: ["Engineer", "Intern", "No thanks!"],
+          message: "Would you like to add another team member?",
+        },
+      ])
+      .then((answers2) => {
+        const {
+          EngineerName,
+          EngineerID,
+          EngineerEmail,
+          Github,
+          AddMember,
+        } = answers2;
+        const theEngineer = new Engineer(
+          EngineerName,
+          EngineerID,
+          EngineerEmail,
+          Github
+        );
+
+        const HTML = `
+      <!-- Engineer Card -->
+      <div class="row bg-success m-4">
+          <div class="card">
+              <div class="card-header text-center fs-2">
+                Engineer
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Name: ${theEngineer.name}</h5>
+                <p class="card-text">Employee ID: ${theEngineer.id}</p>
+                <a href="#" class="btn btn-primary">Email Address: ${theEngineer.email}</a>
+                <a href="#" class="btn btn-success">Github: ${theEngineer.github}</a>
+              </div>
+            </div>
+      </div>
+      `;
+
+        const htmlEnd = `  </body>
+      </html>`;
+
+        fs.appendFile("index.html", HTML, (err) => {
+          if (err) {
+            throw err;
+          } else {
+          }
+        });
+
+        if (AddMember == "Engineer") {
+          engineerCreate();
+        } else if (AddMember == "Intern") {
+          internCreate();
+        } else {
+          fs.appendFile("index.html", htmlEnd, (err) => {
+            if (err) {
+              throw err;
+            }
+          });
+          console.log("Your team has been assembled!");
+        }
+      });
+  };
+
+//   function that creates a manager file and most of html
+  const managerCreate = () => {
+    inquirer
+      .prompt([
+        {
+          type: "input",
+          name: "ManagerName",
+          message: "What is the name of the Manager?",
+        },
+        {
+          type: "input",
+          name: "ManagerID",
+          message: "Please provide a manager ID",
+        },
+        {
+          type: "input",
+          name: "ManagerEmail",
+          message: "What is a good Email to reach them at?",
+        },
+        {
+          type: "input",
+          name: "OfficeNumber",
+          message: "Please provide an Office Number",
+        },
+        {
+          type: "list",
+          name: "AddMember",
+          choices: ["Engineer", "Intern", "No thanks!"],
+          message: "Would you like to add another team member?",
+        },
+      ])
+      .then((answers) => {
+        const {
+          ManagerName,
+          ManagerID,
+          ManagerEmail,
+          OfficeNumber,
+          AddMember,
+        } = answers;
+        const theManager = new Manager(
+          ManagerName,
+          ManagerID,
+          ManagerEmail,
+          OfficeNumber
+        );
+
+        const HTML = `<!DOCTYPE html>
   <html lang="en">
   <head>
       <meta charset="UTF-8">
@@ -80,101 +175,33 @@ var teamBuilder = () => {
               </div>
             </div>
       </div>
-      
-  </body>
-  </html>`
-  
-  fs.writeFile("index.html", HTML, (err) => {
-    if (err) {
-      throw err;
-    } else {
-      console.log("Your Team builder website has been built!");
-    }
-  });
+`;
 
+        const htmlEnd = `  </body>
+</html>`;
 
-  if (AddMember == "Engineer" || "Intern") {
-      console.log("yoooooo")
-  }
-// if ()
-})
+        fs.writeFile("index.html", HTML, (err) => {
+          if (err) {
+            throw err;
+          } else {
+          }
+        });
+
+        if (AddMember == "Engineer") {
+          engineerCreate();
+        } else if (AddMember == "Intern") {
+          internCreate();
+        } else {
+          fs.appendFile("index.html", htmlEnd, (err) => {
+            if (err) {
+              throw err;
+            }
+          });
+          console.log("Your team has been assembled!");
+        }
+      });
   };
   managerCreate();
 };
 
 teamBuilder();
-
-//   .then((answers) => {
-// const {
-//   Title,
-//   Description,
-//   Installation,
-//   Usage,
-//   License,
-//   Contribution,
-//   Tests,
-//   Github,
-//   Email,
-// } = answers;
-// let badge = (license) => {
-//   // const license = license
-//   let badge;
-//   switch (license) {
-//     case "Apache":
-//       badge = '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)'
-//       break;
-//     case "MIT":
-//       badge = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)'
-//       break;
-//     case "BSD 3":
-//       badge = '[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)'
-//       break;
-//   }
-//   return badge
-// }
-//     const README = `# ${Title}
-
-// ## Badge
-// ${badge(License)}
-
-// ## Description
-// ${Description}
-
-// ## Table of Contents
-// [Description](#Description)
-// [Installation](#Installation)
-// [Usage](#Usage)
-// [License](#License)
-// [Contribution](#Contribution)
-// [Tests](#Tests)
-// [Questions](#Questions)
-
-// ## Installation
-// ${Installation}
-
-// ## Usage
-// ${Usage}
-
-// ## License
-// ${License}
-
-// ## Contribution
-// ${Contribution}
-
-// ## Tests
-// ${Tests}
-
-// ## Questions
-// https://github.com/${Github}
-// You can reach me at the following email with any additional questions you may have: ${Email}`
-
-// console.log("Your Answers: ");
-// console.log(answers);
-// fs.writeFile("README.md", README, (err) => {
-//   if (err) {
-//     throw err;
-//   } else {
-//     console.log("The file has been saved!");
-//   }
-// });
-//   });
