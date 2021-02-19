@@ -15,6 +15,7 @@ const fs = require("fs");
 
 //   Function that holds logic for html creation
 const teamBuilder = () => {
+// Function that creates a new intern after collecting information
     const internCreate = () => {
         inquirer
           .prompt([
@@ -36,7 +37,7 @@ const teamBuilder = () => {
             {
               type: "input",
               name: "School",
-              message: "Please provide a Github username",
+              message: "Please provide the school this intern is attending",
             },
             {
               type: "list",
@@ -71,7 +72,7 @@ const teamBuilder = () => {
                     <h5 class="card-title">Name: ${theIntern.name}</h5>
                     <p class="card-text">Employee ID: ${theIntern.id}</p>
                     <p class="card-text">Employee School: ${theIntern.school}</p>
-                    <a href="#" class="btn btn-primary">Email Address: ${theIntern.email}</a>
+                    <a href="mailto: ${theIntern.email}" class="btn btn-primary">Email Address: ${theIntern.email}</a>
                   </div>
                 </div>
           </div>
@@ -158,8 +159,8 @@ const teamBuilder = () => {
               <div class="card-body">
                 <h5 class="card-title">Name: ${theEngineer.name}</h5>
                 <p class="card-text">Employee ID: ${theEngineer.id}</p>
-                <a href="#" class="btn btn-primary">Email Address: ${theEngineer.email}</a>
-                <a href="#" class="btn btn-success">Github: ${theEngineer.github}</a>
+                <a href="mailto: ${theEngineer.email}" class="btn btn-primary">Email Address: ${theEngineer.email}</a>
+                <a href="https://github.com/${theEngineer.github}" class="btn btn-success">Github: ${theEngineer.github}</a>
               </div>
             </div>
       </div>
@@ -242,6 +243,7 @@ const teamBuilder = () => {
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+      <link rel="stylesheet" href="./dist/style.css">
       <title>TeamBuilder</title>
   </head>
   <body>
@@ -259,7 +261,7 @@ const teamBuilder = () => {
                 <h5 class="card-title">Name: ${theManager.name}</h5>
                 <p class="card-text">Employee ID: ${theManager.id}</p>
                 <p class="card-text">Office number: ${theManager.officeNumber}</p>
-                <a href="#" class="btn btn-primary">Email Address: ${theManager.email}</a>
+                <a href="mailto: ${theManager.email}" class="btn btn-primary">Email Address: ${theManager.email}</a>
               </div>
             </div>
       </div>
