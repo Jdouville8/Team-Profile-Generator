@@ -4,6 +4,10 @@
 
 Creates a work team with a manager and any additional team members the user elects to include using a command line application then writes the members to a formatted HTML page
 
+## Image
+
+[Example](./Images/ScreenShotOfDeployed.png)
+
 ## Table of Contents
 
 [Description](#Description)
@@ -20,7 +24,7 @@ User must install the inquirer and jest packages via npm
 
 ## Usage
 
-Used to assemble project teams equipped with engineers and interns
+Used to assemble project teams equipped with engineers and interns. Simply enter the prompts on the command line until you are done adding members to the team and deploy the html file titled "index.html" to your browser
 
 ## License
 
