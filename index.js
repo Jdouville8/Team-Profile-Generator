@@ -6,6 +6,8 @@ const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const fs = require("fs");
 
+// Psuedocode for command line app
+
 // Create function for Manager Prompt
 // Give option to add other team members at the end
 // Ultimately pass prompt answers into a new Manager object
@@ -65,14 +67,14 @@ const teamBuilder = () => {
           <!-- Intern Card -->
           <div class="row bg-success m-4">
               <div class="card">
-                  <div class="card-header text-center fs-2 bg-info">
+                  <div class="card-header text-center fs-2 internStyle">
                     Intern
                   </div>
                   <div class="card-body">
                     <h5 class="card-title">Name: ${theIntern.name}</h5>
                     <p class="card-text">Employee ID: ${theIntern.id}</p>
                     <p class="card-text">Employee School: ${theIntern.school}</p>
-                    <a href="mailto: ${theIntern.email}" class="btn btn-primary">Email Address: ${theIntern.email}</a>
+                    <a href="mailto: ${theIntern.email}" class="btn emailStyle">Email Address: ${theIntern.email}</a>
                   </div>
                 </div>
           </div>
@@ -153,14 +155,14 @@ const teamBuilder = () => {
       <!-- Engineer Card -->
       <div class="row bg-success m-4">
           <div class="card">
-              <div class="card-header text-center fs-2 bg-danger">
+              <div class="card-header text-center fs-2 engineerStyle">
                 Engineer
               </div>
               <div class="card-body">
                 <h5 class="card-title">Name: ${theEngineer.name}</h5>
                 <p class="card-text">Employee ID: ${theEngineer.id}</p>
-                <a href="mailto: ${theEngineer.email}" class="btn btn-primary">Email Address: ${theEngineer.email}</a>
-                <a href="https://github.com/${theEngineer.github}" class="btn btn-success">Github: ${theEngineer.github}</a>
+                <a href="mailto: ${theEngineer.email}" class="btn emailStyle">Email Address: ${theEngineer.email}</a>
+                <a href="https://github.com/${theEngineer.github}" class="btn titleStyle">Github: ${theEngineer.github}</a>
               </div>
             </div>
       </div>
@@ -247,21 +249,21 @@ const teamBuilder = () => {
       <title>TeamBuilder</title>
   </head>
   <body>
-      <div class="row bg-success">
+      <div class="row titleStyle">
           <h1 class="fs-1 fw-bold text-center m-4">The Team Builder</h1>
       </div>
   
       <!-- Manager Card -->
       <div class="row bg-success m-4">
           <div class="card">
-              <div class="card-header text-center fs-2 bg-warning">
+              <div class="card-header text-center fs-2 managerStyle">
                 Manager
               </div>
               <div class="card-body">
                 <h5 class="card-title">Name: ${theManager.name}</h5>
                 <p class="card-text">Employee ID: ${theManager.id}</p>
                 <p class="card-text">Office number: ${theManager.officeNumber}</p>
-                <a href="mailto: ${theManager.email}" class="btn btn-primary">Email Address: ${theManager.email}</a>
+                <a href="mailto: ${theManager.email}" class="btn emailStyle">Email Address: ${theManager.email}</a>
               </div>
             </div>
       </div>

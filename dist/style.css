@@ -1,0 +1,20 @@
+.managerStyle {
+  background-color: rgb(216, 131, 115);
+}
+
+.titleStyle {
+  background-color: rgb(16, 126, 125);
+  color: rgb(0, 0, 0);
+}
+
+.engineerStyle {
+  background-color: rgb(131, 80, 116);
+}
+
+.internStyle {
+  background-color: rgb(189, 196, 167);
+}
+
+.emailStyle {
+  background-color: rgb(202, 168, 245);
+}
