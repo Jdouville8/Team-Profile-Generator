@@ -7,6 +7,10 @@
   color: rgb(0, 0, 0);
 }
 
+.titleFont {
+  font-family: "Bungee", cursive;
+}
+
 .engineerStyle {
   background-color: rgb(131, 80, 116);
 }

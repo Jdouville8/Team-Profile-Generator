@@ -162,7 +162,7 @@ const teamBuilder = () => {
                 <h5 class="card-title">Name: ${theEngineer.name}</h5>
                 <p class="card-text">Employee ID: ${theEngineer.id}</p>
                 <a href="mailto: ${theEngineer.email}" class="btn emailStyle">Email Address: ${theEngineer.email}</a>
-                <a href="https://github.com/${theEngineer.github}" class="btn titleStyle">Github: ${theEngineer.github}</a>
+                <a href="https://github.com/${theEngineer.github}" class="btn titleStyle m-1">Github: ${theEngineer.github}</a>
               </div>
             </div>
       </div>
@@ -245,11 +245,13 @@ const teamBuilder = () => {
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="./dist/style.css">
       <title>TeamBuilder</title>
   </head>
   <body>
-      <div class="row titleStyle">
+      <div class="row titleStyle titleFont">
           <h1 class="fs-1 fw-bold text-center m-4">The Team Builder</h1>
       </div>
   
